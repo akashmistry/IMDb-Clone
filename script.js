@@ -71,7 +71,6 @@
   // HANDLE ALL THE CLICKS
   function handleClick(e) {
     const target = e.target;
-    console.log(target);
     // CLICKED ON SEARCH
     if (target.id === "search") {
       const text = searchInput.value;
@@ -165,7 +164,6 @@
       addToFavouriteDOM(i);
     }
   }
-  console.log("LODS", localList);
 
   function appInitialize() {
     document.addEventListener("click", handleClick);
