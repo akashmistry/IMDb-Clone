@@ -53,8 +53,8 @@
             </div>`;
 
     div.classList.add("col");
-    // <i class="bi bi-heart-fill" id="addToFavIcon"></i>
     div.classList.add("movieItem");
+    // <i class="bi bi-heart-fill" id="addToFavIcon"></i>
     moviesList.append(div);
   }
 
@@ -158,19 +158,22 @@
   }
 
   // FOR RENDERING THE LIST PRESENT IN LOCALSTORAGE
+  var localList = JSON.parse(localStorage.getItem("favList"));
   function localListRender() {
-    var localList = JSON.parse(localStorage.getItem("favList"));
     favList = localList;
     for (i of localList) {
       addToFavouriteDOM(i);
     }
   }
+  console.log("LODS", localList);
 
   function appInitialize() {
     document.addEventListener("click", handleClick);
     document.addEventListener("keyup", searchHandler);
     // IF ANY FAV MOVIE WAS ADDED THEN RENDER THE LIST
-    localListRender();
+    if (localList != null) {
+      localListRender();
+    }
   }
   appInitialize();
 })();
