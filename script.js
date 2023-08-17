@@ -49,11 +49,11 @@
         <div id="movieYear">${movie.Year}</div>
         <button id ="addToFav" class="btn btn-outline-danger" data-id="${movie.imdbID}" type="button">
             ADD TO FAVOURITE
-            <i class="bi bi-heart-fill" id="addToFavIcon"></i>
-        </button>
-    </div>`;
+            </button>
+            </div>`;
 
     div.classList.add("col");
+    // <i class="bi bi-heart-fill" id="addToFavIcon"></i>
     div.classList.add("movieItem");
     moviesList.append(div);
   }
@@ -71,7 +71,7 @@
   // HANDLE ALL THE CLICKS
   function handleClick(e) {
     const target = e.target;
-
+    console.log(target);
     // CLICKED ON SEARCH
     if (target.id === "search") {
       const text = searchInput.value;
